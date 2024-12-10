@@ -1,0 +1,32 @@
+{
+    "Name": "Aeraki.ShowServerOnHud",
+    "Description": "Shows the name of the server you are currently in on the top center of your screen, useful for reporting. Original idea by Aeraki. Neinguar and Khalmee held Aeraki's hand the whole way through developing this because she has never touched game modding in her life.",
+    "LoadPriority": 2,
+    "RequiredOnClient": false,
+    "Version": "1.0.1",
+    "ConVars": [
+        {
+            "Name": "lastServerName",
+            "DefaultValue": ""
+        }
+    ],
+    "Scripts": [
+        {
+            "Path": "cockandballs_thing.nut",
+            "RunOn": "CLIENT || UI",
+			"UICallback": {
+                "Before": "ServerDisplayInit"
+                
+            }
+			
+        },
+		{
+			"Path": "gay.porn",
+            "RunOn": "CLIENT",
+			"ClientCallback": {
+                "Before": "ClientPartOfTheThingInit"
+                
+            }
+		}
+    ]
+}

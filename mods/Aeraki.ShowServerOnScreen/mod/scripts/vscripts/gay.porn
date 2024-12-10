@@ -1,0 +1,29 @@
+global function ClientPartOfTheThingInit
+
+
+void function ClientPartOfTheThingInit(){
+	
+	thread ShowServerMain()
+}
+
+var ShowServer = null
+string mapName = ""
+
+void function ShowServerMain(){
+	WaitFrame()
+	mapName = GetMapName()
+  	ShowServer = RuiCreate($"ui/cockpit_console_text_center.rpak", clGlobal.topoCockpitHudPermanent, RUI_DRAW_COCKPIT, 0)
+  	RuiSetInt(ShowServer, "maxLines", 1)
+  	RuiSetInt(ShowServer, "lineNum", 1)
+  	RuiSetFloat2(ShowServer, "msgPos", <0.0, -0.55, 0.0>)
+  	RuiSetString(ShowServer, "msgText", GetConVarString("lastServerName")) //edit me
+  	RuiSetFloat(ShowServer, "msgFontSize", 25.0)
+  	RuiSetFloat(ShowServer, "msgAlpha", 0.6)
+  	RuiSetFloat(ShowServer, "thicken", 0.0)
+ 	RuiSetFloat3(ShowServer, "msgColor", <1.0, 1.0, 1.0>)
+	
+	while(mapName == GetMapName()){
+		WaitFrame()
+	}
+	RuiDestroy(ShowServer)
+}
