@@ -1,7 +1,7 @@
 {
-    "name": "Show_server_on_hud",
-    "version_number":"1.0.1",
-    "website_url": "",
+    "name": "ServerNameHUD",
+    "version_number":"1.1.1",
+    "website_url": "https://github.com/reihera/showserveronhud",
     "description": "Shows the name of the server you are currently in on the top center of your screen, useful for reporting.",
-    "dependencies": ["northstar-Northstar-1.18.1"]
+    "dependencies": []
 }

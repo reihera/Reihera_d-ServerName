@@ -1,9 +1,9 @@
 {
-    "Name": "Aeraki.ShowServerOnHud",
-    "Description": "Shows the name of the server you are currently in on the top center of your screen, useful for reporting. Original idea by Aeraki. Neinguar and Khalmee held Aeraki's hand the whole way through developing this because she has never touched game modding in her life.",
+    "Name": "ServerNameHUD",
+    "Description": "Shows server name on the top* of your hud.",
     "LoadPriority": 2,
     "RequiredOnClient": false,
-    "Version": "1.0.1",
+    "Version": "1.1.1",
     "ConVars": [
         {
             "Name": "lastServerName",
@@ -26,6 +26,13 @@
 			"ClientCallback": {
                 "Before": "ClientPartOfTheThingInit"
                 
+            }
+		},
+		{
+            "Path": "ui/show_server_hud_settings.nut",
+            "RunOn": "UI",
+            "UICallback": {
+                "After": "ShowServerSettingsInit"
             }
 		}
     ]
